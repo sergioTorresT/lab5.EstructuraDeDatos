@@ -32,3 +32,26 @@ graph.c:58:30: error: invalid use of incomplete typedef ‘List’
    58 |             return listaEdge -> current;
       |                              ^~
 b42bba1
+Thu May 14 08:22:31 PM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:53:21: error: implicit declaration of function ‘search_map’ [-Wimplicit-function-declaration]
+   53 |     MapPair *pair = search_map(g -> adjacencyMap, (void *)label1);
+      |                     ^~~~~~~~~~
+graph.c:53:21: error: initialization of ‘MapPair *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+graph.c:54:29: error: returning ‘void *’ from a function with return type ‘int’ makes integer from pointer without a cast [-Wint-conversion]
+   54 |     if(pair == NULL) return NULL;
+      |                             ^~~~
+graph.c:56:21: error: invalid use of incomplete typedef ‘List’
+   56 |     while(listaEdge -> current == NULL){
+      |                     ^~
+graph.c:57:29: error: invalid use of incomplete typedef ‘List’
+   57 |         if(strcmp(listaEdge -> current, label2)){
+      |                             ^~
+graph.c:58:30: error: invalid use of incomplete typedef ‘List’
+   58 |             return listaEdge -> current;
+      |                              ^~
+b33bdee
