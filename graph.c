@@ -53,7 +53,7 @@ int getWeight(Graph* g, const char* label1, const char* label2) {
     MapPair *pair = map_search(g -> adjacencyMap, (void *)label1);
     if(pair == NULL) return -1;
     List * listaEdge = (List *) pair -> value;
-    Edge *edge = list_fist(listaEdge);
+    Edge *edge = list_first(listaEdge);
     while(edge != NULL){
         if(strcmp(edge -> target, label2)){
             return edge -> weight;
