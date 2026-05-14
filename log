@@ -74,3 +74,18 @@ graph.c:58:30: error: invalid use of incomplete typedef ‘List’
    58 |             return listaEdge -> current;
       |                              ^~
 8d9b866
+Thu May 14 08:28:51 PM UTC 2026: 
+ graph.c | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:56:18: error: implicit declaration of function ‘list_fist’; did you mean ‘list_first’? [-Wimplicit-function-declaration]
+   56 |     Edge *edge = list_fist(listaEdge);
+      |                  ^~~~~~~~~
+      |                  list_first
+graph.c:56:18: error: initialization of ‘Edge *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+graph.c:61:23: error: expected expression before ‘)’ token
+   61 |         edge = (edge *)list_next(listaEdge);
+      |                       ^
+da727e2
