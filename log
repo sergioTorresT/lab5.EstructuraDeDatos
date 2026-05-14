@@ -6,3 +6,29 @@ Fri May  8 10:07:21 PM UTC 2026:
  tests:  0|6
 ========================================
 36e8bf5
+Thu May 14 08:22:11 PM UTC 2026: 
+ graph.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:53:21: error: implicit declaration of function ‘search_map’ [-Wimplicit-function-declaration]
+   53 |     MapPair *pair = search_map(g -> adjacencyMap, (void *)label1);
+      |                     ^~~~~~~~~~
+graph.c:53:21: error: initialization of ‘MapPair *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+graph.c:54:22: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+   54 |     if(pair == NULL) return;
+      |                      ^~~~~~
+graph.c:51:5: note: declared here
+   51 | int getWeight(Graph* g, const char* label1, const char* label2) {
+      |     ^~~~~~~~~
+graph.c:56:21: error: invalid use of incomplete typedef ‘List’
+   56 |     while(listaEdge -> current == NULL){
+      |                     ^~
+graph.c:57:29: error: invalid use of incomplete typedef ‘List’
+   57 |         if(strcmp(listaEdge -> current, label2)){
+      |                             ^~
+graph.c:58:30: error: invalid use of incomplete typedef ‘List’
+   58 |             return listaEdge -> current;
+      |                              ^~
+b42bba1
