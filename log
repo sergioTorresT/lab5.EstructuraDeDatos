@@ -560,3 +560,25 @@ In file included from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-
    77 | __NTH (strcpy (__fortify_clang_overload_arg (char *, __restrict, __dest),
       |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ffe237a
+Sun May 17 02:07:12 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:94:22: error: initialization of ‘char’ from ‘char *’ makes integer from pointer without a cast [-Wint-conversion]
+   94 |         char copia = (char *)malloc(strlen(edge -> target) + 1);
+      |                      ^
+graph.c:95:16: error: passing argument 1 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+   95 |         strcpy(copia, edge -> target);
+      |                ^~~~~
+      |                |
+      |                char
+In file included from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/features.h:511,
+                 from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/bits/libc-header-start.h:33,
+                 from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/stdio.h:28,
+                 from test.c:1:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/bits/string_fortified.h:77:16: note: expected ‘char *’ but argument is of type ‘char’
+   77 | __NTH (strcpy (__fortify_clang_overload_arg (char *, __restrict, __dest),
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9503827
