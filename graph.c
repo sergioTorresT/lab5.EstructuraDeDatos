@@ -32,7 +32,9 @@ Graph* createGraph() {
 
 void addNode(Graph* g, const char* label) {
     if (!g || !label) return;
-
+    if(map_search(g -> adjacencyMap, label) != NULL) return;
+    List adjacencyList = create_list();
+    map_insert(g -> adjacencyMap, label, adjacencyList);
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
@@ -60,7 +62,6 @@ int getWeight(Graph* g, const char* label1, const char* label2) {
         }
         edge = (Edge *)list_next(listaEdge);
     }
-    return -1;
     
 
     // Si no existe el origen o terminamos de iterar sin encontrar el destino

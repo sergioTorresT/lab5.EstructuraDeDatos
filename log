@@ -111,3 +111,36 @@ Thu May 14 08:30:44 PM UTC 2026:
  tests:  1|5
 ========================================
 44ffcb1
+Sun May 17 12:56:23 AM UTC 2026: 
+ graph.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:35:38: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   35 |     if(map_search(g -> adjacencyMap, label) != NULL) return;
+      |                                      ^~~~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+graph.c:36:5: error: variable ‘adjacencyList’ has initializer but incomplete type
+   36 |     List adjacencyList = create_list();
+      |     ^~~~
+graph.c:36:26: error: implicit declaration of function ‘create_list’ [-Wimplicit-function-declaration]
+   36 |     List adjacencyList = create_list();
+      |                          ^~~~~~~~~~~
+graph.c:36:10: error: storage size of ‘adjacencyList’ isn’t known
+   36 |     List adjacencyList = create_list();
+      |          ^~~~~~~~~~~~~
+graph.c:37:35: error: passing argument 2 of ‘map_insert’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   37 |     map_insert(g -> adjacencyMap, label, adjacencyList);
+      |                                   ^~~~~
+map.h:18:33: note: expected ‘void *’ but argument is of type ‘const char *’
+   18 | void map_insert(Map *map, void *key, void *value);
+      |                           ~~~~~~^~~
+graph.c:36:10: error: unused variable ‘adjacencyList’ [-Werror=unused-variable]
+   36 |     List adjacencyList = create_list();
+      |          ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+e2957ef
