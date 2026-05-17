@@ -91,7 +91,7 @@ List* getAdjacentLabels(Graph* g, const char* label) {
     List *nuevaLista = list_create();
     Edge *edge = (Edge *)list_first(listaEdge);
     while(edge != NULL){
-        list_pushFront(nuevaLista, (void)edge -> target);
+        list_pushFront(nuevaLista, (void *)edge -> target);
     }
 
     return nuevaLista; 
