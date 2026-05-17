@@ -364,3 +364,43 @@ Sun May 17 01:36:32 AM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 8e90eac
+Sun May 17 01:53:55 AM UTC 2026: 
+ graph.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:88:51: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   88 |     MapPair *pair = map_search(g -> adjacencyMap, label);
+      |                                                   ^~~~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+graph.c:92:26: error: too few arguments to function ‘list_first’
+   92 |     Edge *edge = (Edge *)list_first();
+      |                          ^~~~~~~~~~
+In file included from graph.h:4,
+                 from graph.c:6:
+list.h:10:7: note: declared here
+   10 | void *list_first(List *L);
+      |       ^~~~~~~~~~
+graph.c:94:24: error: ‘nuevaLista’ undeclared (first use in this function); did you mean ‘nuevaList’?
+   94 |         list_pushFront(nuevaLista, (void)edge -> target);
+      |                        ^~~~~~~~~~
+      |                        nuevaList
+graph.c:94:24: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:94:36: error: invalid use of void expression
+   94 |         list_pushFront(nuevaLista, (void)edge -> target);
+      |                                    ^~~~~~~~~~~~~~~~~~~~
+graph.c:91:11: error: unused variable ‘nuevaList’ [-Werror=unused-variable]
+   91 |     List *nuevaList = list_create();
+      |           ^~~~~~~~~
+graph.c:90:11: error: unused variable ‘listaEdge’ [-Werror=unused-variable]
+   90 |     List *listaEdge = (List *)pair -> value;
+      |           ^~~~~~~~~
+graph.c:98:1: error: control reaches end of non-void function [-Werror=return-type]
+   98 | }
+      | ^
+cc1: all warnings being treated as errors
+106d710
