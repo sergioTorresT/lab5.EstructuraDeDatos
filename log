@@ -252,3 +252,15 @@ graph.c:29:8: note: declared here
    29 | Graph* createGraph() {
       |        ^~~~~~~~~~~
 32a881f
+Sun May 17 01:04:22 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:30:39: error: ‘Grap’ undeclared (first use in this function); did you mean ‘Graph’?
+   30 |     Graph *g = (Graph *)malloc(sizeof(Grap));
+      |                                       ^~~~
+      |                                       Graph
+graph.c:30:39: note: each undeclared identifier is reported only once for each function it appears in
+92ec2d8
