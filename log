@@ -234,3 +234,21 @@ graph.c:32:7: error: invalid type argument of ‘->’ (have ‘Graph’)
    32 |     g -> adjacencyMap = map_create(is_equal_string);
       |       ^~
 f2ebba7
+Sun May 17 01:04:09 AM UTC 2026: 
+ graph.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:30:39: error: ‘Grap’ undeclared (first use in this function); did you mean ‘Graph’?
+   30 |     Graph *g = (Graph *)malloc(sizeof(Grap));
+      |                                       ^~~~
+      |                                       Graph
+graph.c:30:39: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:31:19: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+   31 |     if(g == NULL) return;
+      |                   ^~~~~~
+graph.c:29:8: note: declared here
+   29 | Graph* createGraph() {
+      |        ^~~~~~~~~~~
+32a881f
