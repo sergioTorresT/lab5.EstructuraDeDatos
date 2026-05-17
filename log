@@ -162,3 +162,14 @@ graph.c:36:10: error: storage size of ‘adjacencyList’ isn’t known
 graph.c:36:10: error: unused variable ‘adjacencyList’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 a53ae9b
+Sun May 17 12:57:44 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:36:27: error: implicit declaration of function ‘create_list’ [-Wimplicit-function-declaration]
+   36 |     List *adjacencyList = create_list();
+      |                           ^~~~~~~~~~~
+graph.c:36:27: error: initialization of ‘List *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+cb9a1a1
