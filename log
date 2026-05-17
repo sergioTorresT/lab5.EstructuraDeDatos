@@ -433,3 +433,13 @@ graph.c:90:11: error: unused variable ‘listaEdge’ [-Werror=unused-variable]
       |           ^~~~~~~~~
 cc1: all warnings being treated as errors
 8c6cecc
+Sun May 17 01:54:49 AM UTC 2026: 
+ graph.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:94:36: error: invalid use of void expression
+   94 |         list_pushFront(nuevaLista, (void)edge -> target);
+      |                                    ^~~~~~~~~~~~~~~~~~~~
+417c2b5
