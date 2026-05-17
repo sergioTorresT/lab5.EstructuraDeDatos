@@ -587,3 +587,15 @@ Sun May 17 02:07:39 AM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 7bdd8ec
+Sun May 17 02:09:19 AM UTC 2026: 
+ graph.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:40:41: error: ‘edge’ undeclared (first use in this function); did you mean ‘Edge’?
+   40 |     char *copia = (char *)malloc(strlen(edge -> target) + 1);
+      |                                         ^~~~
+      |                                         Edge
+graph.c:40:41: note: each undeclared identifier is reported only once for each function it appears in
+fc4bf54
