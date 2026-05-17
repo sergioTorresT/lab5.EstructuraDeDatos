@@ -88,7 +88,7 @@ List* getAdjacentLabels(Graph* g, const char* label) {
     MapPair *pair = map_search(g -> adjacencyMap, label);
     if(pair == NULL) return NULL;
     List *listaEdge = (List *)pair -> value;
-    List *nuevaList = list_create();
+    List *nuevaLista = list_create();
     Edge *edge = (Edge *)list_first();
     while(edge != NULL){
         list_pushFront(nuevaLista, (void)edge -> target);

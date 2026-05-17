@@ -404,3 +404,32 @@ graph.c:98:1: error: control reaches end of non-void function [-Werror=return-ty
       | ^
 cc1: all warnings being treated as errors
 106d710
+Sun May 17 01:54:14 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:88:51: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   88 |     MapPair *pair = map_search(g -> adjacencyMap, label);
+      |                                                   ^~~~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+graph.c:92:26: error: too few arguments to function ‘list_first’
+   92 |     Edge *edge = (Edge *)list_first();
+      |                          ^~~~~~~~~~
+In file included from graph.h:4,
+                 from graph.c:6:
+list.h:10:7: note: declared here
+   10 | void *list_first(List *L);
+      |       ^~~~~~~~~~
+graph.c:94:36: error: invalid use of void expression
+   94 |         list_pushFront(nuevaLista, (void)edge -> target);
+      |                                    ^~~~~~~~~~~~~~~~~~~~
+graph.c:90:11: error: unused variable ‘listaEdge’ [-Werror=unused-variable]
+   90 |     List *listaEdge = (List *)pair -> value;
+      |           ^~~~~~~~~
+cc1: all warnings being treated as errors
+8c6cecc
