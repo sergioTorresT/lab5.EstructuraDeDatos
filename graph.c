@@ -32,9 +32,9 @@ Graph* createGraph() {
 
 void addNode(Graph* g, const char* label) {
     if (!g || !label) return;
-    if(map_search(g -> adjacencyMap, label) != NULL) return;
+    if(map_search(g -> adjacencyMap, (void *)label) != NULL) return;
     List adjacencyList = create_list();
-    map_insert(g -> adjacencyMap, label, adjacencyList);
+    map_insert(g -> adjacencyMap, (void *)label, adjacencyList);
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {
