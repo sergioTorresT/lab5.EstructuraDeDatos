@@ -179,3 +179,34 @@ Sun May 17 12:58:45 AM UTC 2026:
  tests:  2|4
 ========================================
 7ad231d
+Sun May 17 01:02:40 AM UTC 2026: 
+ graph.c | 3 +++
+ 1 file changed, 3 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:30:38: error: ‘Grap’ undeclared (first use in this function); did you mean ‘Graph’?
+   30 |     Graph g = (Graph *)malloc(sizeof(Grap));
+      |                                      ^~~~
+      |                                      Graph
+graph.c:30:38: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:31:10: error: invalid operands to binary == (have ‘Graph’ and ‘void *’)
+   31 |     if(g == NULL) return;
+      |          ^~
+graph.c:31:19: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+   31 |     if(g == NULL) return;
+      |                   ^~~~~~
+graph.c:29:8: note: declared here
+   29 | Graph* createGraph() {
+      |        ^~~~~~~~~~~
+graph.c:32:7: error: invalid type argument of ‘->’ (have ‘Graph’)
+   32 |     g -> adjacencyMap = map_create();
+      |       ^~
+graph.c:32:25: error: too few arguments to function ‘map_create’
+   32 |     g -> adjacencyMap = map_create();
+      |                         ^~~~~~~~~~
+In file included from graph.c:8:
+map.h:14:6: note: declared here
+   14 | Map *map_create(int (*is_equal)(void *key1, void *key2)); // unsorted map
+      |      ^~~~~~~~~~
+4c8756a
