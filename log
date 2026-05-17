@@ -346,3 +346,16 @@ graph.c:62:29: error: expected expression before ‘)’ token
    62 |     List *listEdge = (list *)pair -> value;
       |                             ^
 0bccfe9
+Sun May 17 01:36:12 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:61:22: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+   61 |     if(pair == NULL) return;
+      |                      ^~~~~~
+graph.c:58:7: note: declared here
+   58 | List* getEdges(Graph* g, const char* label) {
+      |       ^~~~~~~~
+2eafdc1

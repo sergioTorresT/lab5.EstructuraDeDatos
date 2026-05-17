@@ -59,7 +59,7 @@ List* getEdges(Graph* g, const char* label) {
     if (!g || !label) return NULL;
     MapPair *pair = map_search(g -> adjacencyMap, (void *)label);
     if(pair == NULL) return;
-    List *listEdge = (list *)pair -> value;
+    List *listEdge = (List *)pair -> value;
 
     return listEdge;
 }
