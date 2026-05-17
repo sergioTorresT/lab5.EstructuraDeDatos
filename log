@@ -299,3 +299,24 @@ Sun May 17 01:25:23 AM UTC 2026:
 Sun May 17 01:27:17 AM UTC 2026: 
  tests:  0|0
 54a7541
+Sun May 17 01:31:45 AM UTC 2026: 
+ graph.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:45:53: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   45 |     MapPair *parSrc = map_search(g -> adjacencyMap, src);
+      |                                                     ^~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+graph.c:46:54: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   46 |     MapPair *parDest = map_search(g -> adjacencyMap, dest);
+      |                                                      ^~~~
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+cc1: all warnings being treated as errors
+dd5f57b
