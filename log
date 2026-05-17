@@ -325,3 +325,24 @@ Sun May 17 01:32:09 AM UTC 2026:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 4b6fe27
+Sun May 17 01:35:59 AM UTC 2026: 
+ graph.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getEdges’:
+graph.c:61:22: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+   61 |     if(pair == NULL) return;
+      |                      ^~~~~~
+graph.c:58:7: note: declared here
+   58 | List* getEdges(Graph* g, const char* label) {
+      |       ^~~~~~~~
+graph.c:62:23: error: ‘list’ undeclared (first use in this function); did you mean ‘List’?
+   62 |     List *listEdge = (list *)pair -> value;
+      |                       ^~~~
+      |                       List
+graph.c:62:23: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:62:29: error: expected expression before ‘)’ token
+   62 |     List *listEdge = (list *)pair -> value;
+      |                             ^
+0bccfe9
