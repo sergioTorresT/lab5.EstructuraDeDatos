@@ -493,3 +493,23 @@ Sun May 17 01:59:24 AM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 c4d7ab9
+Sun May 17 01:59:48 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getAdjacentLabels’:
+graph.c:95:20: error: ‘list’ undeclared (first use in this function); did you mean ‘List’?
+   95 |         list_next((list *)edge));
+      |                    ^~~~
+      |                    List
+graph.c:95:20: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:95:26: error: expected expression before ‘)’ token
+   95 |         list_next((list *)edge));
+      |                          ^
+graph.c:95:32: error: expected ‘;’ before ‘)’ token
+   95 |         list_next((list *)edge));
+      |                                ^
+      |                                ;
+graph.c:95:32: error: expected statement before ‘)’ token
+dbe1700
